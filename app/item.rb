@@ -13,10 +13,7 @@ class Item
     @@item
   end
   
-  def self.find_by_name(name)
-    
-  
-  def self.return_price_by_name(name)
+  def self.return_match_by_name(name)
     @@item.each do |item|
       if item.name == name
         return item
