@@ -11,6 +11,7 @@ class Application
         resp.write "#{new_item.price}"
       else
         resp.write "Item not found"
+        resp.status = 404
       end
     else
       resp.write "Route not found"
