@@ -7,7 +7,10 @@ class Application
     if req.path.match(/items/)
       item_name = req.path.split('/items/').last
       new_item = Item.return_match_by_name(item_name)
-      resp.write "#{new_item.price}"
+      if new_item
+        resp.write "#{new_item.price}"
+      else
+        resp.write "Item not found"
     else
       resp.write "Route not found"
       resp.status = 404
